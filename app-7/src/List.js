@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import Todo from './Todo'
 
-class Todo extends Component{
+class List extends Component{
     render(){
         const listDisplay = this.props.arr.map((element, i) => (
             <div key={i}>
-                <h3>{element}</h3>
+                {element}
             </div>
         ))
 
         return(
             <div>
-                {listDisplay}
+                <h4>{listDisplay}</h4>
             </div>
         )
     }
 }
 
-export default Todo;
+export default List;
