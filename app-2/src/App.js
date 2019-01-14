@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -8,16 +7,16 @@ class App extends Component {
     super()
 
     this.state = {
-      futureGarage = []
+      futureGarage: ['Lamborghini Gallardo', 'Porsche GT2RS', 'Ford Raptor', 'BMW M3', 'Toyota Chaser']
     }
   }
 
   render() {
-    const list = this.state.futureGarage.map((element, i) => {
-      <div>
+    const list = this.state.futureGarage.map((element, i) => (
+      <div key={i}>
         <h2>{element}</h2>
       </div>
-    })
+    ));
 
     return (
       <div className="App">
