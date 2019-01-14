@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Todo from './Todo'
 
-class List extends Component{
-    render(){
-        const listDisplay = this.props.arr.map((element, i) => (
-            <div key={i}>
-                {element}
-            </div>
-        ))
+//functional component
+//receives props from App.js parent
+//maps through array
+//sends element props to Todo.js child and gets back <p></p>
+//returns display back to parent
 
-        return(
-            <div>
-                <h4>{listDisplay}</h4>
-            </div>
+export default function List(props){
+    let listDisplay = props.arr.map((element, i) => {
+        return (
+            <Todo key={i} item={element}/>
         )
-    }
-}
+    })
 
-export default List;
+    return(
+        <div>
+            {listDisplay}
+        </div>
+    )
+}
