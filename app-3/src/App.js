@@ -13,7 +13,13 @@ class App extends Component {
   }
 
   handleInput(val){
-    var filteredArray = this.state.futureGarage.filter((element, i) => element.includes(val))
+    var filteredArray = this.state.futureGarage.filter((element, i) => {
+      let lowerVal = val.toLowerCase();
+      let lowerEl = element.toLowerCase();
+      if(lowerEl.includes(lowerVal)){
+        return element;
+      }
+    })
     console.log(filteredArray)
     this.setState({
       userInput: val,
